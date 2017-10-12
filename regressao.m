@@ -1,4 +1,4 @@
-function retorno = regressao(x, y)
+function [b0, b1, retorno] = regressao(x, y)
   subX = x - mean(x);
   subY = y - mean(y);
   
