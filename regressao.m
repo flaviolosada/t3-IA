@@ -10,5 +10,4 @@ function retorno = regressao(x, y)
   b0 = mean(y) - b1.*mean(x);
   
   retorno = b0 + b1.*x;
-  
 end
