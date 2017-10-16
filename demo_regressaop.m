@@ -79,6 +79,31 @@
   %  index = index + 1;
   %end
   
+  %--Pamela--
+  %h) Montar dados de teste e treinamento
+  %Mistura os dados aleatoriamente
+  randomData = data(randperm(length(data)));
+  qtdLinhas = length(randomData);
+  qtdDataTeste = round(qtdLinhas * 0.1);
+  dataTeste = ones(qtdDataTeste,2);
+  yTeste = ones(qtdDataTeste);
+  dataTreinamento = ones(qtdLinhas-qtdDataTeste,2);
+  yTreinamento = ones(count-qtdDataTeste);
+  
+  
+  for i=1:qtdDataTeste
+    dataTeste(i,2) = randomData(i);
+    yTeste(i) = randomData(i);
+  end
+   
+  index = qtdDataTeste+1;
+  for i=1:dataTreinamento
+    dataTreinamento(i,2) = randomData(index);
+    yTreinamento(i) = randomData(index);
+    index = index + 1;
+  end
+  %--Pamela--
+  
   %i) Monta linhas de regressao apenas para dados de treinamento
   
   %j) Calcula EQM apenas para os dados de teste
