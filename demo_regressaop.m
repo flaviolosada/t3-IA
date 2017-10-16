@@ -59,29 +59,6 @@
   
   %h) Montar dados de teste e treinamento
   %Mistura os dados aleatoriamente
-  %randomData = data(randperm(length(data)));
-  %qtdDataTeste = round(size(randomData)(1) * 0.1);
-  %dataTeste = ones(qtdDataTeste,2);
-  %yTeste = ones(qtdDataTeste);
-  %dataTreinamento = ones(count-qtdDataTeste,2);
-  %yTreinamento = ones(count-qtdDataTeste);
-  
-  
-  %for i=1:qtdDataTeste
-  %  dataTeste(i,2) = randomData(i,1);
-  %  yTeste(i) = randomData(i,2);
-  %end
-  % 
-  %index = 1;
-  %for i=qtdDataTeste+1:size(randomData)(1)
-  %  dataTreinamento(index,2) = randomData(i,1);
-  %  yTreinamento(i) = randomData(i,2);
-  %  index = index + 1;
-  %end
-  
-  %--Pamela--
-  %h) Montar dados de teste e treinamento
-  %Mistura os dados aleatoriamente
   randomData = data(randperm(length(data)));
   qtdLinhas = length(randomData);
   qtdDataTeste = round(qtdLinhas * 0.1);
@@ -101,7 +78,6 @@
     yTreinamento(i) = randomData(index);
     index = index + 1;
   end
-  %--Pamela--
   
   %i) Monta linhas de regressao apenas para dados de treinamento
   %c - Traca a linha de regressao (N = 1)
