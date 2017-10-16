@@ -90,14 +90,13 @@
   dataTreinamento = ones(qtdLinhas-qtdDataTeste,2);
   yTreinamento = ones(count-qtdDataTeste);
   
-  
   for i=1:qtdDataTeste
     dataTeste(i,2) = randomData(i);
     yTeste(i) = randomData(i);
   end
    
   index = qtdDataTeste+1;
-  for i=1:dataTreinamento
+  for i=1:length(dataTreinamento)
     dataTreinamento(i,2) = randomData(index);
     yTreinamento(i) = randomData(index);
     index = index + 1;
@@ -105,8 +104,54 @@
   %--Pamela--
   
   %i) Monta linhas de regressao apenas para dados de treinamento
+  %c - Traca a linha de regressao (N = 1)
+  %Retorna matriz [valor1(b1) valor2(b0)]
+  Xtreinamento = ones(size(dataTreinamento),2);
+  Xtreinamento(:, 2) = dataTreinamento(:, 2);
+  ytreinamento = dataTreinamento(:, 2);
+  reg = polyfit(Xtreinamento(:,2), ytreinamento, 1);
+  
+  %Calcula a linha de regressao
+  linhaReg1 = polyval(reg, Xtreinamento);
+  
+  hold on;
+  plot(Xtreinamento, linhaReg1, 'b');
+  
+  %d - Traca a linha de regressao (N = 2)
+  %Retorna matriz [valor1(b2) valor2(b1) valor3(b0)]
+  reg = polyfit(Xtreinamento(:,2), ytreinamento, 2);
+  
+  %Calcula a linha de regressao
+  linhaReg2 = polyval(reg, Xtreinamento);
+  
+  hold on;
+  plot(Xtreinamento, linhaReg2, 'g');
+  
+  %e - Traca a linha de regressao (N = 3)
+  %Retorna matriz [valor1(b3) valor2(b2) valor3(b1) valor4(b0)]
+  reg = polyfit(Xtreinamento(:,2), ytreinamento, 3);
+  
+  %Calcula a linha de regressao
+  linhaReg3 = polyval(reg, Xtreinamento);
+  
+  hold on;
+  plot(Xtreinamento, linhaReg3, 'k');
+  
+  %f - Traca a linha de regressao (N = 8)
+  reg = polyfit(Xtreinamento(:,2), ytreinamento, 8);
+  
+  %Calcula a linha de regressao
+  linhaReg8 = polyval(reg, Xtreinamento);
+  
+  hold on;
+  plot(Xtreinamento, linhaReg8, 'y');
   
   %j) Calcula EQM apenas para os dados de teste
+  %g) Calcula EQM (Erro quadratico medio) das linhas de regressao
+  eqmLinha1Teste = (sum((linhaReg1 - mean(linhaReg1)).^2)) / size(linhaReg1, 1);
+  eqmLinha2Teste = (sum((linhaReg2 - mean(linhaReg2)).^2)) / size(linhaReg2, 1);
+  eqmLinha3Teste = (sum((linhaReg3 - mean(linhaReg3)).^2)) / size(linhaReg3, 1);
+  eqmLinha8Teste = (sum((linhaReg8 - mean(linhaReg8)).^2)) / size(linhaReg8, 1);
   
   %k) Método mais preciso
   
