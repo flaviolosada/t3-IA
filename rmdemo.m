@@ -1,4 +1,4 @@
-%function retorno = rmdemo()
+% Flávio Omar Losada, Jader Antonio Tomelin, Leonardo Fiedler, Matheus Eduardo Hoeltgebaum Pereira, Pâmela Carolina Vieira, Roberto Luiz Debarba
 
   %a) Carrega os dados
   file = load('Dados\data.mat');

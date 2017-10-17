@@ -1,3 +1,5 @@
+% Flávio Omar Losada, Jader Antonio Tomelin, Leonardo Fiedler, Matheus Eduardo Hoeltgebaum Pereira, Pâmela Carolina Vieira, Roberto Luiz Debarba
+
 function retorno = correlacao(x, y)
   mediaX = mean(x);
   mediaY = mean(y);

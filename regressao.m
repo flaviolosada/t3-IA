@@ -1,3 +1,5 @@
+% Flávio Omar Losada, Jader Antonio Tomelin, Leonardo Fiedler, Matheus Eduardo Hoeltgebaum Pereira, Pâmela Carolina Vieira, Roberto Luiz Debarba
+
 function [b0, b1, retorno] = regressao(x, y)
   subX = x - mean(x);
   subY = y - mean(y);

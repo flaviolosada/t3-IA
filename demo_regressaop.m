@@ -1,4 +1,4 @@
-%function retorno = demo_regressaop()
+% Flávio Omar Losada, Jader Antonio Tomelin, Leonardo Fiedler, Matheus Eduardo Hoeltgebaum Pereira, Pâmela Carolina Vieira, Roberto Luiz Debarba
 
   %a) Carrega os dados
   file = load('Dados\data_preg.mat');
@@ -129,6 +129,5 @@
   eqmLinha3Teste = (sum((linhaReg3Treinamento - mean(linhaReg3Treinamento)).^2)) / size(linhaReg3Treinamento, 1);
   eqmLinha8Teste = (sum((linhaReg8Treinamento - mean(linhaReg8Treinamento)).^2)) / size(linhaReg8Treinamento, 1);
   
-  %k) MÃ©todo mais preciso
+  %k) MÃ©todo mais preciso é método que separa dados para treinamento e para testes (Regressão Quadrática)
   
-%end

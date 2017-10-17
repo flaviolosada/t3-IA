@@ -1,3 +1,5 @@
+% Flávio Omar Losada, Jader Antonio Tomelin, Leonardo Fiedler, Matheus Eduardo Hoeltgebaum Pereira, Pâmela Carolina Vieira, Roberto Luiz Debarba
+
 function retorno = regmultipla(y, X)
 
   %X1 = X(1:47, 2);
